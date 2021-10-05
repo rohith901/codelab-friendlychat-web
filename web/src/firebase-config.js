@@ -1,20 +1,21 @@
-/**
- * To find your Firebase config object:
- * 
- * 1. Go to your [Project settings in the Firebase console](https://console.firebase.google.com/project/_/settings/general/)
- * 2. In the "Your apps" card, select the nickname of the app for which you need a config object.
- * 3. Select Config from the Firebase SDK snippet pane.
- * 4. Copy the config object snippet, then add it here.
- */
-const config = {
-  /* TODO: ADD YOUR FIREBASE CONFIGURATION OBJECT HERE */
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBUxhoaYwx4udtMVMqokkH382xf5Y4kJaM",
+  authDomain: "web-chat-c8523.firebaseapp.com",
+  projectId: "web-chat-c8523",
+  storageBucket: "web-chat-c8523.appspot.com",
+  messagingSenderId: "864253078976",
+  appId: "1:864253078976:web:b31a8230acb2983fac2c25",
+  measurementId: "G-F36DWKBSC1"
 };
 
-export function getFirebaseConfig() {
-  if (!config || !config.apiKey) {
-    throw new Error('No Firebase configuration object provided.' + '\n' +
-    'Add your web app\'s configuration object to firebase-config.js');
-  } else {
-    return config;
-  }
-}
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
